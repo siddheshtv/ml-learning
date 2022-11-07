@@ -135,7 +135,7 @@ scan_data()
 
 
 def print_decision_tree_bfs(start_node):
-    print("In Method: " + str(print_decision_tree_bfs))
+    print("\nIn Method: " + str(print_decision_tree_bfs))
     queue = deque([start_node])
     level = 0
 
@@ -152,7 +152,7 @@ def print_decision_tree_bfs(start_node):
 
         level += 1
 
-        print("Exiting method: " + str(print_decision_tree_bfs))
+        print("\nExiting method: " + str(print_decision_tree_bfs))
 
 
     
