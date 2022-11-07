@@ -221,3 +221,15 @@ class Node:
         self.tuple_ids = []
 
 create_tree()
+
+def process_test_data(node, test_data):
+    for neighbour in node.neighbours:
+        if neighbour['node'].attriibute == ('%s' % CLASS_LABEL):
+            return neighbour
+        
+        if test_data[neighbour['attribute']] == neighbour['attribute_value']:
+            return process_test_data(neighbour['node'], test_data)
+
+        if len(node.neighbours) == 0:
+            return node.data
+
