@@ -1,4 +1,4 @@
-data = [
+data_json = [
     {
         'id': 1,
         'age': 'youth',
@@ -122,10 +122,40 @@ def scan_data():
         'buys_computer': set(),
     }
 
-    for row_tuple in data:
+    for row_tuple in data_json:
         for key in row_tuple:
             if key != 'id':
                 bins[key].add(row_tuple[key])
     print(bins)
 
 scan_data()
+
+def create_tree():
+    bins = scan_data()
+
+    decision_tree_start_node = Node()
+    decision_tree_start_node.data = data_json
+    attribute_list = []
+
+    for i in bins:
+        attribute_list.append(custom_bin)
+    
+    create_nodes(decision_tree_start_node, bins, attribute_list, 0)
+    print_decision_tree_bfs(decision_tree_start_node)
+    print(decision_tree_start_node)
+
+
+class Node:
+    data = list(),
+    attribute = " ",
+    neighbors = list(),
+    tuple_ids = list()
+
+    def __init__(self) -> None:
+        self.data = []
+        self.attribute = []
+        self.neighbors = []
+        self.tuple_ids = []
+
+def print_decision_tree_bfs():
+    
