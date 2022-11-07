@@ -149,6 +149,8 @@ def print_decision_tree_bfs(start_node):
 
             level += 1
 
+        print("Exiting method: " + str(print_decision_tree_bfs))
+
 
     
 
