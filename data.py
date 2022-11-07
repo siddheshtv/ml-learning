@@ -162,6 +162,7 @@ def create_nodes(parent_node, bins, attribute_list, attribute_list_index):
                 'node': node
             }
         )
+        create_nodes(node, bins, attribute_list, attribute_list_index + 1)
 
 # recursive+fin(ip) :
 #       base condition
