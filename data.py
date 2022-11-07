@@ -128,6 +128,7 @@ def scan_data():
         for key in row_tuple:
             if key != 'id':
                 bins[key].add(row_tuple[key])
+    return bins
     print(bins)
 
 scan_data()
@@ -149,7 +150,7 @@ def print_decision_tree_bfs(start_node):
             for neighbour in node.neighbours:
                 queue.append(neighbour['node'])
 
-            level += 1
+        level += 1
 
         print("Exiting method: " + str(print_decision_tree_bfs))
 
@@ -163,8 +164,11 @@ def create_tree():
     decision_tree_start_node.data = data_json
     attribute_list = []
 
+    print(bins)
     for custom_bin in bins:
+        print(custom_bin)
         attribute_list.append(custom_bin)
+
     
     create_nodes(decision_tree_start_node, bins, attribute_list, 0)
     print_decision_tree_bfs(decision_tree_start_node)
@@ -186,7 +190,7 @@ def create_nodes(parent_node, bins, attribute_list, attribute_list_index):
         return
     attribute = attribute_list[attribute_list_index]
 
-    for custom_bin in bins[attribute_list_index]:
+    for custom_bin in bins[attribute]:
         node = Node()
         node.attribute = attribute
         attribute_value = custom_bin
@@ -216,3 +220,4 @@ class Node:
         self.neighbours = []
         self.tuple_ids = []
 
+create_tree()
