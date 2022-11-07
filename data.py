@@ -36,7 +36,7 @@ data_json = [
     {
         'id': 5,
         'age': 'senior',
-        'income': 'high',
+        'income': 'low',
         'student': 'yes',
         'credit_rating': 'fair',
         'buys_computer': 'yes',
@@ -44,7 +44,7 @@ data_json = [
     {
         'id': 6,
         'age': 'senior',
-        'income': 'high',
+        'income': 'low',
         'student': 'yes',
         'credit_rating': 'excellent',
         'buys_computer': 'no',
@@ -52,7 +52,7 @@ data_json = [
     {
         'id': 7,
         'age': 'middle_aged',
-        'income': 'high',
+        'income': 'low',
         'student': 'yes',
         'credit_rating': 'excellent',
         'buys_computer': 'yes',
@@ -68,7 +68,7 @@ data_json = [
     {
         'id': 9,
         'age': 'youth',
-        'income': 'high',
+        'income': 'low',
         'student': 'yes',
         'credit_rating': 'fair',
         'buys_computer': 'yes',
