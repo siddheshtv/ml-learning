@@ -17,7 +17,7 @@ data = [
     },
     {
         'id': 3,
-        'age': 'youth',
+        'age': 'middle_aged',
         'income': 'high',
         'student': 'no',
         'credit_rating': 'fair',
@@ -49,7 +49,7 @@ data = [
     },
     {
         'id': 7,
-        'age': 'youth',
+        'age': 'middle_aged',
         'income': 'high',
         'student': 'yes',
         'credit_rating': 'excellent',
@@ -89,7 +89,7 @@ data = [
     },
     {
         'id': 12,
-        'age': 'youth',
+        'age': 'middle_aged',
         'income': 'medium',
         'student': 'no',
         'credit_rating': 'excellent',
@@ -97,7 +97,7 @@ data = [
     },
     {
         'id': 13,
-        'age': 'youth',
+        'age': 'middle_aged',
         'income': 'high',
         'student': 'yes',
         'credit_rating': 'fair',
@@ -112,3 +112,20 @@ data = [
         'buys_computer': 'no',
     },
 ]
+
+def scan_data():
+    bins = {
+        'age': set(),
+        'income': set(),
+        'student': set(),
+        'credit_rating': set(),
+        'buys_computer': set(),
+    }
+
+    for row_tuple in data:
+        for key in row_tuple:
+            if key != 'id':
+                bins[key].add(row_tuple[key])
+    print(bins)
+
+scan_data()
