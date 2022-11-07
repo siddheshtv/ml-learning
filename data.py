@@ -1,3 +1,5 @@
+from collections import deque
+
 data_json = [
     {
         'id': 1,
