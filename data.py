@@ -145,16 +145,38 @@ def create_tree():
     print(decision_tree_start_node)
 
 
+def create_nodes(parent_node, bins, attribute_list, attribute_list_index):
+    if attribute_list_index >= len(attribute_list):
+        return
+    attribute = attribute_list[attribute_list_index]
+
+    for custom_bin in bins[attribute_list_index]:
+        node = Node()
+        node.attribute = attribute
+        attribute_value = custom_bin
+        node.data = process_node_data(parent_node.data, attribute, attribute_value)
+        parent_node.neighbours.append(
+            {
+                'attribute': attribute,
+                'attribute_value': custom_bin,
+                'node': node
+            }
+        )
+
+# recursive+fin(ip) :
+#       base condition
+#  
+
 class Node:
     data = list(),
     attribute = " ",
-    neighbors = list(),
+    neighbours = list(),
     tuple_ids = list()
 
     def __init__(self) -> None:
         self.data = []
         self.attribute = []
-        self.neighbors = []
+        self.neighbours = []
         self.tuple_ids = []
 
 def print_decision_tree_bfs():
